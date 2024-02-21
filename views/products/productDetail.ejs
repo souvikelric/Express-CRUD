@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail - <%= foundProduct.name %></title>
+    <style>
+      body {
+        background-color: #333;
+        color: white;
+      }
+      h1 {
+        color: rgb(201, 69, 95);
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; align-items: center">
+      <h1
+        style="
+          font-size: 50px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        <%=foundProduct.name %>
+      </h1>
+      <a
+        style="
+          display: block;
+          align-self: center;
+          border-radius: 10px;
+          margin: 60px;
+          padding: 10px 15px;
+          background-color: rgba(3, 0, 0, 0.704);
+          text-decoration: none;
+          color: blueviolet;
+          font-size: 24px;
+        "
+        href="/products/<%= foundProduct.id %>/edit"
+        >Edit</a
+      >
+    </div>
+    <div style="font-size: 24px; font-family: sans-serif">
+      <span>Price : </span>
+      $<%=foundProduct.price %>
+    </div>
+    <div style="font-size: 24px; font-family: sans-serif">
+      <span>ID : </span>
+      <%=foundProduct.id %>
+    </div>
+    <div style="font-size: 24px; font-family: sans-serif">
+      <span>Category : </span>
+      <%=foundProduct.category %>
+    </div>
+    <form
+      style="margin: 10px 0px"
+      action="/products/<%=  foundProduct.id %>?_method=DELETE"
+      method="post"
+    >
+      <button>Delete Item</button>
+    </form>
+    <a style="color: rgb(153, 89, 186)" href="/">Back to All Products</a>
+  </body>
+</html>

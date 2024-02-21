@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products</title>
+    <style>
+      body {
+        background-color: #333;
+        color: white;
+      }
+      h1 {
+        color: rgb(201, 69, 95);
+      }
+      a {
+        margin-left: 20px;
+        padding: 5px 8px;
+        background-color: #b92323;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      a:hover {
+        background-color: #3567a0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1
+      style="
+        font-size: 50px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      "
+    >
+      All Products
+    </h1>
+    <a style="margin-left: 0" href="/products/new">Add New</a>
+
+    <% for(let p of allProducts) { %>
+    <div style="font-size: 24px; font-family: sans-serif; margin-top: 20px">
+      <%= p.name %>
+      <a href="products/<%=p.id%>"> More Details </a>
+    </div>
+    <% }%>
+  </body>
+</html>
